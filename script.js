@@ -1,32 +1,18 @@
-// Flip the sample index card on click or Enter/Space
-const flipCard = document.getElementById('flip-card');
+const menuButton = document.querySelector('.menu-button');
+const nav = document.querySelector('.site-nav');
 
-function toggleFlip() {
-  flipCard.classList.toggle('flipped');
+if (menuButton && nav) {
+  menuButton.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 
-flipCard.addEventListener('click', toggleFlip);
-flipCard.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    toggleFlip();
-  }
-});
-
-// Copy install command to clipboard
-const copyBtn = document.getElementById('copy-btn');
-const installCmd = document.getElementById('install-cmd');
-
-copyBtn.addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(installCmd.textContent.trim());
-    copyBtn.textContent = 'copied';
-    copyBtn.classList.add('copied');
-    setTimeout(() => {
-      copyBtn.textContent = 'copy';
-      copyBtn.classList.remove('copied');
-    }, 1600);
-  } catch (err) {
-    // Clipboard API unavailable — fail silently, command is still selectable text
-  }
-});
+document.getElementById('year').textContent = new Date().getFullYear();

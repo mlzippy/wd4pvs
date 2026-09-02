@@ -1,167 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recall — flashcards that live in your repo</title>
-<meta name="description" content="Recall stores spaced-repetition flashcards as plain markdown files, reviewed from your terminal and versioned in git.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071427">
+  <meta name="description" content="WD4PVS — Zippy Amateur Radio. On the air, on the road, always exploring.">
+  <meta property="og:title" content="WD4PVS | Zippy Amateur Radio">
+  <meta property="og:description" content="Amateur radio, mobile operating, technical projects, and radio adventures.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:type" content="website">
+  <title>WD4PVS | Zippy Amateur Radio</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="drawer-line top"></div>
-
-<header class="site-header">
-  <div class="wrap header-inner">
-    <span class="wordmark">RECALL</span>
-    <nav class="header-nav">
-      <a href="#how">How it works</a>
-      <a href="#catalog">Catalog</a>
-      <a href="https://github.com" class="header-link">GitHub ↗</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">tab: 03 — study tools</p>
-        <h1>Your flashcards,<br>versioned like code.</h1>
-        <p class="hero-sub">
-          Recall stores spaced-repetition decks as plain markdown files, so your
-          review history lives right next to the notes and code you're actually
-          studying — no account, no app, no lock-in.
-        </p>
-        <div class="install-row">
-          <code class="install-cmd" id="install-cmd">npm install -g @recall/cli</code>
-          <button class="copy-btn" id="copy-btn" aria-label="Copy install command">copy</button>
-        </div>
-        <a class="cta-secondary" href="https://github.com">Read the source →</a>
-      </div>
-
-      <div class="hero-card">
-        <div class="index-card" id="flip-card" tabindex="0" role="button" aria-label="Flip the sample flashcard">
-          <div class="index-card-inner">
-            <div class="index-card-face index-card-front">
-              <p class="card-file">cards/functional.md</p>
-              <pre class="card-md">## What is a monad?
----
-A type that wraps a value
-and defines how functions
-compose over it.</pre>
-              <p class="card-hint">click to flip</p>
-            </div>
-            <div class="index-card-face index-card-back">
-              <p class="card-file">rendered</p>
-              <p class="card-question">What is a monad?</p>
-              <div class="card-rule"></div>
-              <p class="card-answer">A type that wraps a value and defines how functions compose over it.</p>
-              <p class="card-stamp">reviewed</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="#top" aria-label="WD4PVS home">
+        <span class="brand-call">WD4PVS</span>
+        <span class="brand-name">Zippy Amateur Radio</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#radio">Radio</a>
+        <a href="#projects">Projects</a>
+        <a href="#resources">Resources</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="how" id="how">
-    <div class="wrap">
-      <h2>How it works</h2>
-      <ol class="steps">
-        <li class="step">
-          <span class="step-num">01</span>
-          <div class="step-body">
-            <h3>Write a card</h3>
-            <p>Each card is a markdown file with a question above the rule and an answer below it. Put them wherever makes sense — <code>/cards</code>, next to your notes, inside an existing repo.</p>
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Amateur Radio • Mobile • Technical • Adventure</p>
+          <h1>On the air. On the road. Always exploring.</h1>
+          <p class="lead">Welcome to the radio home of <strong>WD4PVS</strong>. This site is a place for station notes, mobile operating, antenna experiments, technical builds, useful radio resources, and the fun of making contacts near and far.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#radio">Explore the station</a>
+            <a class="button secondary" href="#resources">Ham radio resources</a>
           </div>
-        </li>
-        <li class="step">
-          <span class="step-num">02</span>
-          <div class="step-body">
-            <h3>Commit it</h3>
-            <p>Cards live in git like everything else you write. Edit history, blame, and diffs work exactly the way you'd expect — no separate sync layer to trust.</p>
-          </div>
-        </li>
-        <li class="step">
-          <span class="step-num">03</span>
-          <div class="step-body">
-            <h3>Review in your terminal</h3>
-            <p><code>recall review</code> pulls due cards using SM-2 scheduling and runs the session right in your shell, no browser tab required.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="catalog" id="catalog">
-    <div class="wrap">
-      <h2>Catalog</h2>
-      <div class="catalog-list">
-
-        <div class="catalog-row">
-          <span class="catalog-tag">FORMAT</span>
-          <div class="catalog-copy">
-            <h3>Plain markdown storage</h3>
-            <p>No proprietary database, no export step. A card is a text file — readable in any editor, diffable in any git host.</p>
+          <div class="callout" role="note">
+            <strong>Operating reminder:</strong> Always follow FCC rules, local band plans, repeater policies, and good amateur-radio operating practice.
           </div>
         </div>
-
-        <div class="catalog-row">
-          <span class="catalog-tag">SCHEDULE</span>
-          <div class="catalog-copy">
-            <h3>SM-2 spaced repetition</h3>
-            <p>The same scheduling algorithm behind most modern spaced-repetition tools, tuned for short terminal sessions instead of long browser ones.</p>
-          </div>
+        <div class="hero-logo-card">
+          <img src="assets/zippy-logo.png" alt="Zippy amateur radio logo with WD4PVS, radio tower, mountains, transceiver, microphone, and compass rose">
         </div>
-
-        <div class="catalog-row">
-          <span class="catalog-tag">SYNC</span>
-          <div class="catalog-copy">
-            <h3>Git-native</h3>
-            <p>Push and pull your deck like any other repo. Study on a laptop, sync on a desktop, resolve conflicts the way you already know how.</p>
-          </div>
-        </div>
-
-        <div class="catalog-row">
-          <span class="catalog-tag">PRIVACY</span>
-          <div class="catalog-copy">
-            <h3>Runs entirely local</h3>
-            <p>No server, no account, no telemetry. Your cards and your review history never leave the repo you put them in.</p>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="cta-band">
-    <div class="wrap cta-band-inner">
-      <div>
-        <h2>Start a deck this week.</h2>
-        <p>Free, open source, MIT licensed.</p>
+    <section id="about" class="section">
+      <div class="wrap two-col">
+        <div>
+          <p class="section-kicker">About</p>
+          <h2>Radio is part technical hobby, part community, and part adventure.</h2>
+        </div>
+        <div class="prose">
+          <p>Amateur radio brings together electronics, antennas, computers, emergency communications, public service, experimentation, and conversations with people around the world. Whether operating from home, a vehicle, a park, or a temporary field station, there is always something new to learn.</p>
+          <p>The focus here is practical: reliable equipment, clean installations, safe mobile operation, useful accessories, antenna experimentation, and making the station easier and more enjoyable to use.</p>
+        </div>
       </div>
-      <div class="install-row">
-        <code class="install-cmd">npm install -g @recall/cli</code>
+    </section>
+
+    <section id="radio" class="section section-dark">
+      <div class="wrap">
+        <p class="section-kicker">Radio Activities</p>
+        <h2>What you’ll find here</h2>
+        <div class="card-grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true">📡</div>
+            <h3>VHF / UHF</h3>
+            <p>Local simplex, repeaters, nets, mobile operation, antenna placement, feed-line routing, and practical station setup.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🌎</div>
+            <h3>HF Operating</h3>
+            <p>Voice and digital operating, propagation, portable setups, logging, antennas, and station improvements.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🚙</div>
+            <h3>Mobile Radio</h3>
+            <p>Vehicle installations, power distribution, RF grounding, cable routing, antenna mounts, and road-ready operating.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🛠️</div>
+            <h3>Technical Projects</h3>
+            <p>3D-printed radio accessories, mounting parts, filters, adapters, test fixtures, and other hands-on builds.</p>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="wrap">
+        <p class="section-kicker">Projects & Notes</p>
+        <h2>Ideas worth documenting</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="tag">Mobile</span>
+            <h3>Vehicle radio installation</h3>
+            <p>Document power wiring, fuse placement, antenna location, coax routing, control-head mounting, and noise troubleshooting.</p>
+          </article>
+          <article class="project-card">
+            <span class="tag">Antennas</span>
+            <h3>Antenna experiments</h3>
+            <p>Compare mounts and antennas, record SWR and analyzer results, and keep notes on real-world performance.</p>
+          </article>
+          <article class="project-card">
+            <span class="tag">3D Printing</span>
+            <h3>Custom radio hardware</h3>
+            <p>Create printable brackets, pass-through blocks, organizers, equipment supports, and station accessories.</p>
+          </article>
+          <article class="project-card">
+            <span class="tag">Operating</span>
+            <h3>Trip and event logs</h3>
+            <p>Keep a simple record of memorable contacts, road trips, field operations, club events, and lessons learned.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band-guide">
+      <div class="wrap">
+        <p class="section-kicker">Quick Reference</p>
+        <h2>A few useful operating reminders</h2>
+        <div class="reference-grid">
+          <div><strong>146.520 MHz</strong><span>National 2-meter FM simplex calling frequency in the U.S.</span></div>
+          <div><strong>Band plans</strong><span>Check the current ARRL band plan and your local coordination practices.</span></div>
+          <div><strong>Repeaters</strong><span>Verify input/output, offset, tone, and local usage before transmitting.</span></div>
+          <div><strong>Identification</strong><span>Use your FCC-issued amateur call sign as required by Part 97.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources" class="section section-dark">
+      <div class="wrap">
+        <p class="section-kicker">Resources</p>
+        <h2>Useful amateur-radio links</h2>
+        <div class="link-grid">
+          <a class="resource-link" href="https://www.arrl.org/" target="_blank" rel="noopener noreferrer">
+            <strong>ARRL</strong><span>Licensing, operating, technical references, news, and band plans.</span>
+          </a>
+          <a class="resource-link" href="https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service" target="_blank" rel="noopener noreferrer">
+            <strong>FCC Amateur Radio Service</strong><span>Official U.S. amateur-radio rules and licensing information.</span>
+          </a>
+          <a class="resource-link" href="https://wireless2.fcc.gov/UlsSearch/searchLicense.jsp" target="_blank" rel="noopener noreferrer">
+            <strong>FCC ULS License Search</strong><span>Look up amateur and GMRS license records.</span>
+          </a>
+          <a class="resource-link" href="https://www.repeaterbook.com/" target="_blank" rel="noopener noreferrer">
+            <strong>RepeaterBook</strong><span>Community-maintained repeater listings for travel and local operating.</span>
+          </a>
+          <a class="resource-link" href="https://www.qrz.com/" target="_blank" rel="noopener noreferrer">
+            <strong>QRZ</strong><span>Call-sign lookups, logging tools, and amateur-radio community information.</span>
+          </a>
+          <a class="resource-link" href="https://www.hamstudy.org/" target="_blank" rel="noopener noreferrer">
+            <strong>HamStudy</strong><span>Study tools and practice exams for U.S. amateur-radio licenses.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="wrap cta-box">
+        <div>
+          <p class="section-kicker">73</p>
+          <h2>Keep learning, keep building, and keep making contacts.</h2>
+          <p>This starter site is intentionally easy to edit. Add station photos, equipment lists, project write-ups, club links, QSL information, or a contact section whenever you’re ready.</p>
+        </div>
+        <a class="button primary" href="#top">Back to top</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <p>© <span id="year"></span> WD4PVS • Zippy Amateur Radio</p>
+      <p>73 and good DX.</p>
     </div>
-  </section>
+  </footer>
 
-</main>
-
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>Recall — MIT licensed</span>
-    <a href="https://github.com">github.com/recall</a>
-  </div>
-</footer>
-
-<div class="drawer-line bottom"></div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
