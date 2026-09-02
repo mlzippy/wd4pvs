@@ -1,0 +1,14 @@
+WD4PVS.com clean-site update
+
+IMPORTANT: Replace the repository contents with the contents of this ZIP rather than only uploading over the old files.
+
+Recommended GitHub procedure:
+1. Open the repository that publishes wd4pvs.com.
+2. Delete the old website files from the repository root (keep repository settings intact).
+3. Upload ALL files from this package to the repository root.
+4. Commit the changes to the main branch.
+5. Open GitHub Actions and wait for the Pages deployment to complete successfully.
+6. Open wd4pvs.com and force-refresh with Ctrl+F5.
+
+The obsolete club page has been removed from this package, and the current navigation contains only:
+Home, My Station, Mobile Setup, Antennas, Radio Gear, Tech Projects, Gallery, Contact.
