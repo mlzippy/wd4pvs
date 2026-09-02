@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recall — flashcards that live in your repo</title>
+<meta name="description" content="Recall stores spaced-repetition flashcards as plain markdown files, reviewed from your terminal and versioned in git.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="drawer-line top"></div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <span class="wordmark">RECALL</span>
+    <nav class="header-nav">
+      <a href="#how">How it works</a>
+      <a href="#catalog">Catalog</a>
+      <a href="https://github.com" class="header-link">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">tab: 03 — study tools</p>
+        <h1>Your flashcards,<br>versioned like code.</h1>
+        <p class="hero-sub">
+          Recall stores spaced-repetition decks as plain markdown files, so your
+          review history lives right next to the notes and code you're actually
+          studying — no account, no app, no lock-in.
+        </p>
+        <div class="install-row">
+          <code class="install-cmd" id="install-cmd">npm install -g @recall/cli</code>
+          <button class="copy-btn" id="copy-btn" aria-label="Copy install command">copy</button>
+        </div>
+        <a class="cta-secondary" href="https://github.com">Read the source →</a>
+      </div>
+
+      <div class="hero-card">
+        <div class="index-card" id="flip-card" tabindex="0" role="button" aria-label="Flip the sample flashcard">
+          <div class="index-card-inner">
+            <div class="index-card-face index-card-front">
+              <p class="card-file">cards/functional.md</p>
+              <pre class="card-md">## What is a monad?
+---
+A type that wraps a value
+and defines how functions
+compose over it.</pre>
+              <p class="card-hint">click to flip</p>
+            </div>
+            <div class="index-card-face index-card-back">
+              <p class="card-file">rendered</p>
+              <p class="card-question">What is a monad?</p>
+              <div class="card-rule"></div>
+              <p class="card-answer">A type that wraps a value and defines how functions compose over it.</p>
+              <p class="card-stamp">reviewed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>Write a card</h3>
+            <p>Each card is a markdown file with a question above the rule and an answer below it. Put them wherever makes sense — <code>/cards</code>, next to your notes, inside an existing repo.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>Commit it</h3>
+            <p>Cards live in git like everything else you write. Edit history, blame, and diffs work exactly the way you'd expect — no separate sync layer to trust.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>Review in your terminal</h3>
+            <p><code>recall review</code> pulls due cards using SM-2 scheduling and runs the session right in your shell, no browser tab required.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="catalog" id="catalog">
+    <div class="wrap">
+      <h2>Catalog</h2>
+      <div class="catalog-list">
+
+        <div class="catalog-row">
+          <span class="catalog-tag">FORMAT</span>
+          <div class="catalog-copy">
+            <h3>Plain markdown storage</h3>
+            <p>No proprietary database, no export step. A card is a text file — readable in any editor, diffable in any git host.</p>
+          </div>
+        </div>
+
+        <div class="catalog-row">
+          <span class="catalog-tag">SCHEDULE</span>
+          <div class="catalog-copy">
+            <h3>SM-2 spaced repetition</h3>
+            <p>The same scheduling algorithm behind most modern spaced-repetition tools, tuned for short terminal sessions instead of long browser ones.</p>
+          </div>
+        </div>
+
+        <div class="catalog-row">
+          <span class="catalog-tag">SYNC</span>
+          <div class="catalog-copy">
+            <h3>Git-native</h3>
+            <p>Push and pull your deck like any other repo. Study on a laptop, sync on a desktop, resolve conflicts the way you already know how.</p>
+          </div>
+        </div>
+
+        <div class="catalog-row">
+          <span class="catalog-tag">PRIVACY</span>
+          <div class="catalog-copy">
+            <h3>Runs entirely local</h3>
+            <p>No server, no account, no telemetry. Your cards and your review history never leave the repo you put them in.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-band-inner">
+      <div>
+        <h2>Start a deck this week.</h2>
+        <p>Free, open source, MIT licensed.</p>
+      </div>
+      <div class="install-row">
+        <code class="install-cmd">npm install -g @recall/cli</code>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>Recall — MIT licensed</span>
+    <a href="https://github.com">github.com/recall</a>
+  </div>
+</footer>
+
+<div class="drawer-line bottom"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
