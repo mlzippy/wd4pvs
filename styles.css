@@ -88,3 +88,6 @@ img,video{max-width:100%;height:auto}
  .banner-skywarn img{height:88px}
 }
 .banner-military .banner-usaf{order:2;flex-shrink:1}.banner-military{flex-wrap:nowrap}
+
+/* Preserve each badge's natural aspect ratio in all banner layouts. */
+.logo-shell img,.banner-club-logos img{object-fit:contain}.banner-rowan img,.banner-cabarrus img,.banner-ve img,.banner-usaf img,.banner-navy{height:auto;aspect-ratio:auto}.banner-military img{display:block;max-width:100%}
