@@ -60,16 +60,16 @@ img,video{max-width:100%;height:auto}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 /* Banner logos use fixed tracks so image dimensions cannot squeeze the callsign. */
-.banner-club-logos{--club-size:100px;--logo-gap:12px;display:grid;width:318px;max-width:100%;grid-template-columns:94px repeat(2,minmax(0,1fr));grid-template-rows:auto 100px 100px;gap:12px;align-items:center;justify-self:end}
+.banner-club-logos{display:grid;width:206px;max-width:100%;grid-template-columns:94px 100px;grid-template-rows:auto 100px 100px;gap:12px;align-items:center;justify-self:end}
 .banner-club-logos>*{min-width:0}
 .banner-arrl{grid-column:1;grid-row:2 / 4;display:block;background:transparent}
 .banner-arrl img{width:94px;height:212px;object-fit:contain}
 .banner-rowan{grid-column:2;grid-row:2}
-.banner-cabarrus{grid-column:2;grid-row:3}
-.banner-ve{grid-column:3;grid-row:2}
-.banner-rowan,.banner-cabarrus,.banner-ve{display:block;width:100%;max-width:100px}
-.banner-rowan img,.banner-cabarrus img,.banner-ve img{width:100%;height:auto;max-height:100px;object-fit:contain}
-.banner-skywarn{grid-column:3;grid-row:3;display:block;justify-self:center}
+
+
+.banner-rowan{display:block;width:100%;max-width:100px}
+.banner-rowan img{width:100%;height:auto;max-height:100px;object-fit:contain}
+.banner-skywarn{grid-column:2;grid-row:3;display:block;justify-self:center}
 .banner-skywarn img{height:100px;width:auto}
 .banner-military{grid-column:1 / -1;grid-row:1;display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-width:0}
 .banner-military .banner-usaf{width:132px;flex:0 0 132px}
@@ -82,12 +82,12 @@ img,video{max-width:100%;height:auto}
 }
 @media(max-width:720px){
  .home-hero-header .header-grid{grid-template-columns:minmax(0,1fr)}
- .banner-club-logos{width:280px;grid-template-columns:80px repeat(2,minmax(0,1fr));grid-template-rows:auto 88px 88px;gap:10px}
+ .banner-club-logos{width:184px;grid-template-columns:80px 94px;grid-template-rows:auto 88px 88px;gap:10px}
  .banner-arrl img{width:80px;height:186px}
- .banner-rowan img,.banner-cabarrus img,.banner-ve img{max-height:88px}
+ .banner-rowan img{max-height:88px}
  .banner-skywarn img{height:88px}
 }
 .banner-military .banner-usaf{order:2;flex-shrink:1}.banner-military{flex-wrap:nowrap}
 
 /* Preserve each badge's natural aspect ratio in all banner layouts. */
-.logo-shell img,.banner-club-logos img{object-fit:contain}.banner-rowan img,.banner-cabarrus img,.banner-ve img,.banner-usaf img,.banner-navy{height:auto;aspect-ratio:auto}.banner-military img{display:block;max-width:100%}
+.logo-shell img,.banner-club-logos img{object-fit:contain}.banner-rowan img,.banner-usaf img,.banner-navy{height:auto;aspect-ratio:auto}.banner-military img{display:block;max-width:100%}
